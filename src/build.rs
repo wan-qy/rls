@@ -375,8 +375,6 @@ impl BuildQueue {
                     };
                     args.push(sys_root.to_owned());
 
-                    println!("args: {:?}", args.join(" "));
-
                     let envs = cmd.get_envs();
                     trace!("envs: {:?}", envs);
 
@@ -427,11 +425,8 @@ impl BuildQueue {
                                           env::current_dir().unwrap(),
                                           homedir(&build_dir).unwrap());
             //env::set_current_dir(cwd).expect(FAIL_MSG);
-            println!("CargoConfig build_dir: {:?}", build_dir);
-            println!("CargoConfig homedir: {:?}", homedir(&build_dir));
             let mut manifest_path = build_dir.clone();
             manifest_path.push("Cargo.toml");
-            println!("manifest_path: {:?}", manifest_path);
             let ws = Workspace::new(&manifest_path, &config).expect("could not create cargo workspace");
             let mut opts = CompileOptions::default(&config, CompileMode::Check);
             if rls_config.build_lib {

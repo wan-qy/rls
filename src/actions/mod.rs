@@ -377,7 +377,6 @@ impl ActionHandler {
         let t = thread::current();
         let span = self.convert_pos_to_span(&params.text_document, params.position);
 
-        println!("Hover received! {:?}", span);
         trace!("hover: {:?}", span);
 
         let analysis = self.analysis.clone();
@@ -388,8 +387,6 @@ impl ActionHandler {
             let symbols = analysis.symbols(&span.file).unwrap_or_else(|_| Vec::new());
             let search = analysis.search("world").unwrap_or_else(|_| Vec::new());
             t.unpark();
-
-            println!("rustw_handle: {:?} {:?} {:?} {:?} for {:?} {:?}", ty, docs, doc_url, symbols, span.file, search);
 
             let mut contents = vec![];
             if !docs.is_empty() {
@@ -410,7 +407,6 @@ impl ActionHandler {
         thread::park_timeout(Duration::from_millis(::COMPILER_TIMEOUT));
 
         let result = rustw_handle.join();
-        println!("result of hover: {:?}", result);
         match result {
             Ok(r) => {
                 out.success(id, ResponseData::HoverSuccess(r));

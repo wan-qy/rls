@@ -9,7 +9,7 @@ dependencies = [
  "languageserver-types 0.7.0 (git+https://github.com/gluon-lang/languageserver-types)",
  "log 0.3.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "racer 2.0.6 (git+https://github.com/phildawes/racer)",
- "rls-analysis 0.1.0 (git+https://github.com/nrc/rls-analysis)",
+ "rls-analysis 0.1.0",
  "rls-span 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rls-vfs 0.1.0 (git+https://github.com/nrc/rls-vfs)",
  "rustc-serialize 0.3.23 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -678,8 +678,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "rls-analysis"
 version = "0.1.0"
-source = "git+https://github.com/nrc/rls-analysis#2703cfb74a3d4262018fbe78840e4df322bb7333"
 dependencies = [
+ "derive-new 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "rls-data 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rls-span 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1276,7 +1276,6 @@ dependencies = [
 "checksum regex 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4278c17d0f6d62dfef0ab00028feb45bd7d2102843f80763474eeb1be8a10c01"
 "checksum regex-syntax 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)" = "f9ec002c35e86791825ed294b50008eea9ddfc8def4420124fbc6b08db834957"
 "checksum regex-syntax 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "2f9191b1f57603095f105d317e375d19b1c9c5c3185ea9633a99a6dcbed04457"
-"checksum rls-analysis 0.1.0 (git+https://github.com/nrc/rls-analysis)" = "<none>"
 "checksum rls-data 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "af1dfff00189fd7b78edb9af131b0de703676c04fa8126aed77fd2c586775a4d"
 "checksum rls-span 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "8656f7b850ac85fb204ef94318c641bbb15a32766e12f9a589a23e4c0fbc38db"
 "checksum rls-vfs 0.1.0 (git+https://github.com/nrc/rls-vfs)" = "<none>"
